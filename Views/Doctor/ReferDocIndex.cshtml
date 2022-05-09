@@ -1,0 +1,91 @@
+﻿
+@model List<NewMedicoRx.Models.DoctorModel>
+
+@{ ViewBag.Title = "ReferalDoctor";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/dataTables.bootstrap4.min.css" rel="stylesheet" />
+
+
+<div class="panel panel-default ">
+    <div class="panel-heading headingcolor">
+        <h2>Referal Doctor</h2>
+    </div>
+</div>
+<div style="text-align:right;">
+    @Html.ActionLink("Create New", "CreateRecord", null, new { @class = "btn btn-success" })
+</div>
+<table class="table table-bordered table-responsive" id="example">
+    <thead>
+        <tr>
+            <th>
+                DoctorName
+            </th>
+            <th>
+                Specilization
+            </th>
+            <th>
+                Contact Number
+            </th>
+           
+
+            <th>
+                CreatedBy
+            </th>
+            <th>
+                 CreatedOn
+            </th>
+            <th>
+                 UpdatedBy
+            </th>
+            <th>
+                Update On
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DoctorName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Specilization)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ContactNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedOn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UpdatedName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UpdatedOn)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditRecord", new { id = item.DocId }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("View", "Details", new { id = item.DocId }, new { @class = "btn btn-warning" })
+                    @Html.ActionLink("Delete", "DeleteRecord", new { id = item.DocId }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>}
+    </tbody>
+</table>
+
+<script src="~/Scripts/jquery-3.5.1.js"></script>
+<script src="~/Scripts/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/dataTables.bootstrap5.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+</script>
