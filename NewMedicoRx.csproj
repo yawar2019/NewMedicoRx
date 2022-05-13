@@ -195,6 +195,7 @@
     <Content Include="Views\Doctor\Details.cshtml" />
     <Content Include="Views\Doctor\EditRecord.cshtml" />
     <Content Include="Views\Doctor\ReferDocIndex.cshtml" />
+    <Content Include="Views\Appointment\PrescriptionForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

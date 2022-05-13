@@ -13,5 +13,9 @@ namespace NewMedicoRx.Controllers
         {
             return View();
         }
+        public ActionResult PrescriptionForm()
+        {
+            return View();
+        }
     }
 }

@@ -1,0 +1,246 @@
+﻿
+@{
+    ViewBag.Title = "PrescriptionForm";
+}
+<link href="~/Content/twitter-bootstrap.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/1.11.2/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    @@media print {
+          @@page { size:12.5in 11in; margin: 2cm }
+        .header {
+            margin-top: 5px;
+        }
+
+        p.bodyText {
+            font-family: georgia, times, serif;
+        }
+
+        .header {
+            display: none;
+        }
+
+        .title {
+            display: none;
+        }
+    }
+
+    @@media screen, print {
+        td {
+            font-size: 16pt;
+            padding-left: 10px;
+            padding-bottom: 2px;
+        }
+        tr {
+        padding-top:2px;
+        }
+        #tdcol {
+            width: 2px;
+            font-weight: bold;
+        }
+    }
+</style>
+<div style="padding-top:90px">
+    <table class="table table-responsive">
+        <tr>
+            <td>
+                <b>Patient  Name:</b>Mohammed Nayeem Ahmed
+            </td>
+
+            <td>
+                <b>Patient Id:</b>1211
+            </td>
+            <td>
+                <b>Age/Sex:</b>54 Yr/Male
+            </td>
+            <td>
+                <b> Date</b>:2020-06-02
+            </td>
+
+        </tr>
+    </table>
+    <table class="table table-responsive" style="padding-top:2px">
+        <tr>
+            <td>
+                <b>Consultant Doctor:</b>Azam Ali Mohammed
+            </td>
+            <td>
+                <b> WT:</b>54
+            </td>
+            <td>
+                <b> HT:</b>5'4
+            </td>
+            <td>
+                <b> Mobile:</b>111111
+            </td>
+            <td>
+                <b>G.C:</b> Fair
+            </td>
+            <td id="tdcol" class="pt"><b>SPO2:</b></td>
+            <td>99</td>
+        </tr>
+
+    </table>
+    <table class="table table-responsive" style="padding-top:2px">
+        <tr>
+
+
+           
+            <td class="pt" id="tdcol">
+                Temp
+            </td>
+            <td>99F</td>
+            <td class="pt">P/A</td>
+            <td id="tdcol">Soft</td>
+            <td class="pt">
+                P/R
+            </td>
+            <td id="tdcol">72</td>
+            <td class="pt">CNS</td>
+
+
+            <td id="tdcol">NAD</td>
+            <td class="pt">
+                BP
+            </td>
+            <td id="tdcol">120/90mmhg</td>
+
+
+            <td class="pt">GRBS</td>
+            <td id="tdcol">120</td>
+            <td class="pt">
+                L/R
+            </td>
+            <td id="tdcol">NAD</td>
+            <td class="pt">H/R</td>
+            <td id="tdcol">S1S2</td>
+        </tr>
+
+
+    </table>
+    <table class="table-responsive" style="padding-top:2px">
+        <tr>
+            <td>
+                <b>Complain:</b>
+            </td>
+            <td colspan="6" style="word-wrap:break-word">
+                Suffering from Viral Fever Suffering from Viral FeverSuffering from Viral FeverSuffering from Viral FeverSuffering from Viral Fever
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <b>DX:</b>
+            </td>
+
+            <td colspan="8">
+                Suffering from Viral FeverSuffering from Viral FeverSuffering from Viral FeverSuffering from Viral FeverSuffering from Viral Fever
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b> Investigation:</b>
+            </td>
+
+            <td colspan="8">
+                Suffering from Viral FeverSuffering from Viral FeverSuffering from Viral FeverSuffering from Viral FeverSuffering from Viral Fever
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b> Cap</b>
+            </td>
+            <td colspan="2">
+                Calpol
+            </td>
+            <td colspan="3">
+                one Cap before Breakfast(0---)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Tab</b>
+            </td>
+            <td colspan="2">
+                Telmed CT 40 mg
+            </td>
+            <td colspan="3">
+                one tab at 9am  and 9pm(0---0)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>
+                    Cap
+                </b>
+            </td>
+            <td colspan="2">
+                 Calpol
+            </td>
+            <td colspan="3">
+                one Cap before Breakfast(0---)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Tab</b>
+            </td>
+            <td colspan="2">
+                Telmed CT 40 mg
+            </td>
+            <td colspan="3">
+                one tab at 9am  and 9pm(0---0)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b> Cap</b>
+            </td>
+            <td colspan="2">
+                Calpol
+            </td>
+            <td colspan="3">
+                one Cap before Breakfast(0---)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Tab</b>
+            </td>
+            <td colspan="2">
+                Telmed CT 40 mg
+            </td>
+            <td colspan="3">
+                one tab at 9am  and 9pm(0---0)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b> Cap</b>
+            </td>
+            <td colspan="2">
+                Calpol
+            </td>
+            <td colspan="3">
+                one Cap before Breakfast(0---)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Tab
+            </td>
+            <td colspan="2">
+                Telmed CT 40 mg
+            </td>
+            <td colspan="3">
+                one tab at 9am  and 9pm(0---0)
+            </td>
+        </tr>
+
+    </table>
+    <table style="padding-top:2px">
+        <tr colspan="8px">
+            <td style="text-align:right;padding-left:900px;">Dr:Ziadi</td>
+        </tr>
+    </table>
+</div>
