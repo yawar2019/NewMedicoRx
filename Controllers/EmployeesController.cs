@@ -96,35 +96,7 @@ namespace NewMedicoRx.Controllers
         }
 
 
-        //[HttpPost]
-        //public ActionResult Registration(RegistrationModel reg)
-        //{
-        //    var param = new DynamicParameters();
-        //    param.Add("@Name", reg.name);
-        //    param.Add("@Email", reg.emalid);
-        //    param.Add("@Passward", reg.password);
-        //    param.Add("@RoleId", reg.RoleId);
-        //    param.Add("@Status", reg.status);
-        //    param.Add("@Experience", reg.Experience);
-        //    param.Add("@Qualification", reg.Qualification);
-        //    param.Add("@UID", reg.UID);
-        //    param.Add("@MobileNo", reg.MobileNo);
-        //    param.Add("@DOJ", reg.DOJ);
-        //    param.Add("@Address", reg.Address);
-        //    param.Add("@CollectedByUser", reg.CollectedByUser);
-        //    param.Add("@CenterId", reg.CenterId);
-
-        //    int i = RetuningData.AddOrSave<int>("usp_getUserLogin", param);
-        //    if (i > 0)
-        //    {
-        //        return RedirectToAction("Employees");
-        //    }
-        //    else
-        //    {
-        //        return View();
-        //    }
-        //}
-
+      
         public ActionResult DeleteRegistration(int? id)
         {
             var param = new DynamicParameters();

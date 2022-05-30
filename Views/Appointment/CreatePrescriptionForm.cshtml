@@ -1,0 +1,408 @@
+﻿@model NewMedicoRx.Models.AppointmentModel
+
+@{
+    ViewBag.Title = "CreatePrescriptionForm";
+}
+
+<link href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
+
+
+<h2>Create Prescription Form</h2>
+<form>
+    <div>
+        <table class="table">
+            <tr>
+                <td>
+                    <span>Patient Name:Mohammed Nayeem Ahmed</span>
+                </td>
+
+                <td>
+                    <span>PId:1211</span>
+                </td>
+                <td>
+                    <span>Age/Sex:54 Yr/Male</span>
+                </td>
+                <td>
+                    <span> Date:2020-06-02</span>
+                </td>
+
+            </tr>
+        </table>
+        <table class="table table-condensed" style="padding-top:2px">
+            <tr>
+                <td>
+                    <span><b>Patient Address:</b>@Model.pAddress</span>
+                </td>
+                <td>
+                    <span><b>WT:</b>@Model.Wt</span>
+                </td>
+                <td>
+                    <span><b>HT:</b>@Model.Ht</span>
+                </td>
+                <td>
+                    <span><b>Mobile:</b>@Model.MobileNo</span>
+                </td>
+                <td><span><b>GRBS:</b><input type="text" style="width:46px;" /></span></td>
+
+            </tr>
+
+        </table>
+        <table class="table table-condensed" style="padding-top:2px">
+            <tr>
+                <td><b>O/E:</b></td>
+                <td> <span><b>G.C:</b><input type="text" style="width:46px;" /></span></td>
+                <td> <span><b>Temp:</b><input type="text" style="width:46px;" /></span></td>
+                <td><span><b>BP:</b><input type="text" style="width:66px;" /></span></td>
+                <td><span><b>SPO2:</b><input type="text" style="width:46px;" /></span></td>
+                <td><span><b>P/R:</b><input type="text" style="width:46px;" /></span></td>
+                <td><span><b>H/R:</b><input type="text" style="width:66px;" /></span></td>
+                <td><span><b>L/R:</b><input type="text" style="width:46px;" /></span></td>
+                <td><span><b>P/A:</b><input type="text" style="width:46px;" /></span></td>
+                <td><span><b>CNS:</b><input type="text" style="width:46px;" /></span></td>
+            </tr>
+
+
+        </table>
+        <table class="table" style="padding-top:1px;border:0px;">
+            <tr>
+                <td>
+                    <span><b>Complain:</b></span>
+                </td>
+                <td colspan="2">
+                    @Html.TextArea("Complain", "text", 4, 104, new { @class = "form-control" })
+                </td>
+
+            </tr>
+        </table>
+        <table class="table" style="padding-top:1px;border:0px;">
+            <tr>
+                <td colspan="2">
+                    <span><b>H/O:</b></span>
+                </td>
+                <td colspan="4">
+                    <table>
+                        <tr>
+                            <td>HTN:<input type="text" style="width:66px;" /> </td>
+                            <td>DM:<input type="text" style="width:66px;" /></td>
+                            <td>Asthama:<input type="text" style="width:66px;" /></td>
+                        </tr>
+                        <tr>
+                            <td>Cad:<input type="text" style="width:66px;" /></td>
+                            <td>Thyroid:<input type="text" style="width:66px;" /></td>
+                            <td>Copd:<input type="text" style="width:66px;" /></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Drug Alergy:<input type="text" style="width:66px;" /></td>
+                        </tr>
+                    </table>
+                </td>
+                <td colspan="2">
+                    <span><b>Clinical History:</b></span>
+                </td>
+                <td colspan="4">
+                    @Html.TextArea("ClinicalHistory", "text", 4, 104, new { @class = "form-control" })
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <span><b>DX:</b></span>
+                </td>
+
+                <td colspan="4">
+                    @Html.TextArea("DX", "text", 4, 104, new { @class = "form-control" })
+
+                </td>
+
+                <td colspan="2">
+                    <span><b>Avoid:</b></span>
+                </td>
+                <td colspan="4">
+                    @Html.TextArea("Avoid", "text", 4, 104, new { @class = "form-control" })
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <span><b> Investigation:</b></span>
+                </td>
+
+                <td colspan="4">
+                    @Html.TextArea("Investigation", "text", 4, 104, new { @class = "form-control" })
+
+                </td>
+                <td colspan="2">
+                    <span><b>Advice:</b></span>
+                </td>
+                <td colspan="4">
+                    @Html.TextArea("Advice", "text", 4, 104, new { @class = "form-control" })
+
+                </td>
+
+            </tr>
+        </table>
+
+
+        <table class="table" style="padding-top:1px;border:0px;">
+
+            <tr>
+                <td>
+                    <input type="text" name="tabtype1" value="" class="autocomplete" />
+                </td>
+                <td colspan="2">
+                    <input type="text" name="tab1" value="" class="medicine_autocomplete" />
+                </td>
+                <td colspan="3">
+                    <input type="text" name="Dosses1" value="" class="doses_autocomplete" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="tabtype2" value="" class="autocomplete" />
+                </td>
+                <td colspan="2">
+                    <input type="text" name="tab2" value="" class="medicine_autocomplete" />
+                </td>
+                <td colspan="3">
+                    <input type="text" name="Dosses2" value="" class="doses_autocomplete" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="tabtype3" value="" class="autocomplete" />
+                </td>
+                <td colspan="2">
+                    <input type="text" name="tab3" value="" class="medicine_autocomplete" />
+                </td>
+                <td colspan="3">
+                    <input type="text" name="Dosses3" value="" class="doses_autocomplete" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="tabtype4" value="" class="autocomplete" />
+                </td>
+                <td colspan="2">
+                    <input type="text" name="tab4" value="" class="medicine_autocomplete" />
+                </td>
+                <td colspan="3">
+                    <input type="text" name="Dosses4" value="" class="doses_autocomplete" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="tabtype5" value="" class="autocomplete" />
+                </td>
+                <td colspan="2">
+                    <input type="text" name="tab5" value="" class="medicine_autocomplete" />
+                </td>
+                <td colspan="3">
+                    <input type="text" name="Dosses5" value="" class="doses_autocomplete" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="tabtype6" value="" class="autocomplete" />
+                </td>
+                <td colspan="2">
+                    <input type="text" name="tab6" value="" class="medicine_autocomplete" />
+                </td>
+                <td colspan="3">
+                    <input type="text" name="Dosses6" value="" class="doses_autocomplete" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="tabtype7" value="" class="autocomplete" />
+                </td>
+                <td colspan="2">
+                    <input type="text" name="tab7" value="" class="medicine_autocomplete" />
+                </td>
+                <td colspan="3">
+                    <input type="text" name="Dosses7" value="" class="doses_autocomplete" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="tabtype8" value="" class="autocomplete" />
+                </td>
+                <td colspan="2">
+                    <input type="text" name="tab8" value="" class="medicine_autocomplete" />
+                </td>
+                <td colspan="3">
+                    <input type="text" name="Dosses8" value="" class="doses_autocomplete" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="tabtype9" value="" class="autocomplete" />
+                </td>
+                <td colspan="2">
+                    <input type="text" name="tab9" value="" class="medicine_autocomplete" />
+                </td>
+                <td colspan="3">
+                    <input type="text" name="Dosses9" value="" class="doses_autocomplete" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="tabtype10" value="" class="autocomplete" />
+                </td>
+                <td colspan="2">
+                    <input type="text" name="tab10" value="" class="medicine_autocomplete" />
+                </td>
+                <td colspan="3">
+                    <input type="text" name="Dosses10" value="" class="doses_autocomplete" />
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</form>
+
+<br>
+Selected labels:
+<input type="text" id="labels">
+<br>
+Selected values:
+<input type="text" id="values">
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+    $(function () {
+        $.ajax({
+            url: "@Url.Action("GetTabletTypeForm", "Appointment")",
+            dataType: "json",
+            type: "GET",
+            success: function (result) {
+
+                if (result.length > 0) {
+                    $(".autocomplete").autocomplete({
+                        source: result
+                    });
+                }
+            }
+
+        })
+
+        $.ajax({
+            url: "@Url.Action("GetTabletMedicineForm", "Appointment")",
+            dataType: "json",
+            type: "GET",
+            success: function (result) {
+
+                if (result.length > 0) {
+                    $(".medicine_autocomplete").autocomplete({
+                        source: result
+                    });
+                }
+            }
+
+        })
+
+         $.ajax({
+            url: "@Url.Action("GetTabletDosesNameForm", "Appointment")",
+            dataType: "json",
+            type: "GET",
+            success: function (result) {
+
+                if (result.length > 0) {
+                    $(".doses_autocomplete").autocomplete({
+                        source: result
+                    });
+                }
+            }
+
+        })
+    });
+
+    $(function () {
+        function split(val) {
+            return val.split(/,\s*/);
+        }
+        function extractLast(term) {
+            return split(term).pop();
+        }
+
+        var projects = [
+            {
+                value: "yahoo",
+                label: "Yahoo !"
+            },
+            {
+                value: "bing",
+                label: "Bing"
+            },
+            {
+                value: "google",
+                label: "Google"
+            }
+        ];
+
+         $.ajax({
+            url: "@Url.Action("GetDictionary", "Appointment")",
+            dataType: "json",
+            type: "GET",
+            success: function (result) {
+
+                if (result.length > 0) {
+                    projects = result;
+                }
+            }
+
+        })
+
+        $("#Complain,#ClinicalHistory,#DX,#Avoid,#Investigation,#Advice")
+        // don't navigate away from the field on tab when selecting an item
+        .bind("keydown", function (event) {
+            if (event.keyCode === $.ui.keyCode.TAB &&
+                $(this).autocomplete("instance").menu.active) {
+                event.preventDefault();
+            }
+        })
+        .autocomplete({
+            minLength: 0,
+            source: function (request, response) {
+                // delegate back to autocomplete, but extract the last term
+                response($.ui.autocomplete.filter(
+                    projects, extractLast(request.term)));
+            },
+
+            //    so urce:projects,
+            focus: function () {
+                // prevent value inserted on focus
+                return false;
+            },
+            select: function (event, ui) {
+                var terms = split(this.value);
+                // remove the current input
+                terms.pop();
+                // add the selected item
+                terms.push(ui.item.value);
+                // add placeholder to get the comma-and-space at the end
+                terms.push("");
+                this.value = terms.join(", ");
+                var selected_label = ui.item.label;
+                var selected_value = ui.item.value;
+
+                var labels = $('#labels').val();
+                var values = $('#values').val();
+
+                if (labels == "") {
+                    $('#labels').val(selected_label);
+                    $('#Project').val(selected_value);
+                }
+                else {
+                    $('#labels').val(labels + "," + selected_label);
+                    $('#Project').val(values + "," + selected_value);
+                }
+
+                return false;
+            }
+        });
+
+ });
+
+</script>

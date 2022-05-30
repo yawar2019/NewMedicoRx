@@ -12,6 +12,10 @@
     <link href="~/Content/Slider.css" rel="stylesheet" />
     <script src="~/Scripts/Slider.js"></script>
     <link href="~/Content/boxicons.min.css" rel="stylesheet" />
+    <link href="~/Content/twitter-bootstrap.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.11.2/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -66,20 +70,31 @@
                         <span class="nav_name">Home</span>
                     </a>
 
-                    <a href="@Url.Action("index", "Reports", null)" class="nav_link">
+                    @*<a href="@Url.Action("index", "Reports", null)" class="nav_link">
                         <i class='bx bxs-report nav_icon'></i>
                         <span class="nav_name">Report</span>
-                    </a>
+                    </a>*@0
 
-                    <a href="@Url.Action("ReferDocIndex","ReferalDoctor",null)" class="nav_link">
+
+
+                    <a href="@Url.Action("ReferDocIndex","Doctor",null)" class="nav_link">
                         <i class='bx bxs-plus-circle nav_icon'></i> <span class="nav_name">Doctor</span>
                     </a>
 
-                    <a href="@Url.Action("GetBillingInfo", "Billing", null)" class="nav_link">
-                        <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Bill</span>
+                    <a href="@Url.Action("GetDisseases", "Dissease", null)" class="nav_link">
+                        <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Dissease</span>
                     </a>
 
 
+                    <a href="@Url.Action("GetMedicines", "Medicine", null)" class="nav_link">
+                        <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Medicines</span>
+                    </a>
+
+                    <a href="@Url.Action("GetBillingInfo", "Billing", null)" class="nav_link">
+                        <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">View Appointment</span>
+                    </a>
+
+ 
                     <a href="@Url.Action("Employees", "Login", null)" class="nav_link">
                         <i class='bx bx-walk nav_icon'></i> <span class="nav_name">Employees</span>
                     </a>

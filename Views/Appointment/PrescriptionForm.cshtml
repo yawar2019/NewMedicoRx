@@ -1,4 +1,4 @@
-﻿
+﻿@model NewMedicoRx.Models.AppointmentModel
 @{
     ViewBag.Title = "PrescriptionForm";
 }
@@ -6,10 +6,21 @@
 <link href="https://cdn.datatables.net/1.11.2/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+    
     @@media print {
-          @@page { size:12.5in 11in; margin: 2cm }
+        @@page {
+            width: 21cm;
+            height: 29.7cm;
+            margin: 1cm;
+             
+        }
         .header {
-            margin-top: 5px;
+            margin-top: 25px;
+            padding-top:25px;
+        }
+        span {
+            font-weight:500;
+            text-align:left;
         }
 
         p.bodyText {
@@ -25,222 +36,301 @@
         }
     }
 
-    @@media screen, print {
+    @@media  print {
         td {
-            font-size: 16pt;
-            padding-left: 10px;
-            padding-bottom: 2px;
+            font-size: 22pt;
+            /*padding-left: 2px;*/
+            padding-bottom: 5px;
+            font-family:'MS Reference Sans Serif';
+            text-align:left;
+
         }
         tr {
-        padding-top:2px;
+        padding-top:30px;
+        border:none;
         }
         #tdcol {
-            width: 2px;
-            font-weight: bold;
+            width: 1px;
+            font-weight: 500;
         }
     }
 </style>
-<div style="padding-top:90px">
-    <table class="table table-responsive">
+<div style="padding-top:300px">
+    <table class="table">
         <tr>
             <td>
-                <b>Patient  Name:</b>Mohammed Nayeem Ahmed
+                <span><b>Patient Name:</b>@Model.PName</span>
             </td>
 
             <td>
-                <b>Patient Id:</b>1211
+                <span><b>PId:</b>@Model.PId</span>
             </td>
             <td>
-                <b>Age/Sex:</b>54 Yr/Male
+                <span><b>Age/Sex:</b>@Model.AgeSex</span>
             </td>
             <td>
-                <b> Date</b>:2020-06-02
+                <span><b>Date:</b>@DateTime.Now</span>
             </td>
 
         </tr>
     </table>
-    <table class="table table-responsive" style="padding-top:2px">
+    <table class="table table-condensed" style="padding-top:2px">
         <tr>
             <td>
-                <b>Consultant Doctor:</b>Azam Ali Mohammed
+                <span><b>Patient Address:</b>@Model.pAddress</span>
             </td>
             <td>
-                <b> WT:</b>54
+                <span><b>WT:</b>@Model.Wt</span>
             </td>
             <td>
-                <b> HT:</b>5'4
+                <span><b>HT:</b>@Model.Ht</span>
             </td>
             <td>
-                <b> Mobile:</b>111111
+                <span><b>Mobile:</b>@Model.MobileNo</span>
             </td>
-            <td>
-                <b>G.C:</b> Fair
-            </td>
-            <td id="tdcol" class="pt"><b>SPO2:</b></td>
-            <td>99</td>
+            <td><span><b>GRBS:</b>@Model.GRBS</span></td>
+
         </tr>
 
     </table>
-    <table class="table table-responsive" style="padding-top:2px">
+    <table class="table table-condensed" style="padding-top:2px">
         <tr>
-
-
-           
-            <td class="pt" id="tdcol">
-                Temp
-            </td>
-            <td>99F</td>
-            <td class="pt">P/A</td>
-            <td id="tdcol">Soft</td>
-            <td class="pt">
-                P/R
-            </td>
-            <td id="tdcol">72</td>
-            <td class="pt">CNS</td>
-
-
-            <td id="tdcol">NAD</td>
-            <td class="pt">
-                BP
-            </td>
-            <td id="tdcol">120/90mmhg</td>
-
-
-            <td class="pt">GRBS</td>
-            <td id="tdcol">120</td>
-            <td class="pt">
-                L/R
-            </td>
-            <td id="tdcol">NAD</td>
-            <td class="pt">H/R</td>
-            <td id="tdcol">S1S2</td>
+            <td><b>O/E:</b></td>
+            <td> <span><b>G.C:</b>@Model.GC</span></td>
+            <td> <span><b>Temp:</b>@Model.Temp</span></td>
+            <td><span><b>BP:</b>@Model.BP</span></td>
+            <td><span><b>SPO2:</b>@Model.SPO2</span></td>
+            <td><span><b>P/R:</b>@Model.PR</span></td>
+            <td><span><b>H/R:</b>@Model.HR</span></td>
+            <td><span><b>L/R:</b>@Model.LR</span></td>
+            <td><span><b>P/A:</b>@Model.PA</span></td>
+            <td><span><b>CNS:</b>@Model.CNS</span></td>
         </tr>
 
 
     </table>
-    <table class="table-responsive" style="padding-top:2px">
+    <table class="table" style="padding-top:1px;border:0px;">
         <tr>
             <td>
-                <b>Complain:</b>
+                <span><b>Complain:</b></span>
             </td>
-            <td colspan="6" style="word-wrap:break-word">
-                Suffering from Viral Fever Suffering from Viral FeverSuffering from Viral FeverSuffering from Viral FeverSuffering from Viral Fever
-            </td>
-
-        </tr>
-        <tr>
-            <td>
-                <b>DX:</b>
-            </td>
-
             <td colspan="8">
-                Suffering from Viral FeverSuffering from Viral FeverSuffering from Viral FeverSuffering from Viral FeverSuffering from Viral Fever
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <b> Investigation:</b>
+                @Model.Complain
             </td>
 
-            <td colspan="8">
-                Suffering from Viral FeverSuffering from Viral FeverSuffering from Viral FeverSuffering from Viral FeverSuffering from Viral Fever
+        </tr>
+        <tr>
+            <td colspan="2">
+                <span><b>H/O:</b></span>
+            </td>
+            <td colspan="4">
+                <table>
+                    <tr>
+                        <td>HTN:1yr</td>
+                        <td>DM:1yr</td>
+                        <td>Asthama:1yr</td>
+                    </tr>
+                    <tr>
+                        <td>Cad:2yr</td>
+                        <td>Thyroid:1yr</td>
+                        <td>Copd:1yr</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Drug Alergy:Ampacilin</td>
+                    </tr>
+                </table>
+            </td>
+            <td colspan="2">
+                <span><b>Clinical History:</b></span>
+            </td>
+            <td colspan="4">
+                @Model.ClinicalHistory
             </td>
         </tr>
         <tr>
-            <td>
-                <b> Cap</b>
-            </td>
             <td colspan="2">
-                Calpol
+                <span><b>DX:</b></span>
             </td>
-            <td colspan="3">
-                one Cap before Breakfast(0---)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <b>Tab</b>
-            </td>
-            <td colspan="2">
-                Telmed CT 40 mg
-            </td>
-            <td colspan="3">
-                one tab at 9am  and 9pm(0---0)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <b>
-                    Cap
-                </b>
-            </td>
-            <td colspan="2">
-                 Calpol
-            </td>
-            <td colspan="3">
-                one Cap before Breakfast(0---)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <b>Tab</b>
-            </td>
-            <td colspan="2">
-                Telmed CT 40 mg
-            </td>
-            <td colspan="3">
-                one tab at 9am  and 9pm(0---0)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <b> Cap</b>
-            </td>
-            <td colspan="2">
-                Calpol
-            </td>
-            <td colspan="3">
-                one Cap before Breakfast(0---)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <b>Tab</b>
-            </td>
-            <td colspan="2">
-                Telmed CT 40 mg
-            </td>
-            <td colspan="3">
-                one tab at 9am  and 9pm(0---0)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <b> Cap</b>
-            </td>
-            <td colspan="2">
-                Calpol
-            </td>
-            <td colspan="3">
-                one Cap before Breakfast(0---)
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Tab
-            </td>
-            <td colspan="2">
-                Telmed CT 40 mg
-            </td>
-            <td colspan="3">
-                one tab at 9am  and 9pm(0---0)
-            </td>
-        </tr>
 
+            <td colspan="4">
+                @Model.DX
+            </td>
+
+            <td colspan="2">
+                <span><b>Avoid:</b></span>
+            </td>
+            <td colspan="4">
+                @Model.Advice
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <span><b> Investigation:</b></span>
+            </td>
+
+            <td colspan="4">
+                @Model.Investigation
+            </td>
+            <td colspan="2">
+                <span><b>Advice:</b></span>
+            </td>
+            <td colspan="4">
+                @Model.Advice
+            </td>
+
+        </tr>
     </table>
+    <div style="padding-left:110px;">
+        <table class="table" style="padding-top:1px;padding-left:70px;border:0px;">
+            <tr>
+                <td>
+                    <span> Cap</span>
+                </td>
+                <td colspan="2">
+                    Calpol
+                </td>
+                <td colspan="3">
+                    one Cap before Breakfast(0---)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Tab</span>
+                </td>
+                <td colspan="2">
+                    Telmed CT 40 mg
+                </td>
+                <td colspan="3">
+                    one tab at 9am  and 9pm(0---0)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>
+                        Cap
+                    </span>
+                </td>
+                <td colspan="2">
+                    Calpol
+                </td>
+                <td colspan="3">
+                    one Cap before Breakfast(0---)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Tab</span>
+                </td>
+                <td colspan="2">
+                    Telmed CT 40 mg
+                </td>
+                <td colspan="3">
+                    one tab at 9am  and 9pm(0---0)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span> Cap</span>
+                </td>
+                <td colspan="2">
+                    Calpol
+                </td>
+                <td colspan="3">
+                    one Cap before Breakfast(0---)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Tab</span>
+                </td>
+                <td colspan="2">
+                    Telmed CT 40 mg
+                </td>
+                <td colspan="3">
+                    one tab at 9am  and 9pm(0---0)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span> Cap</span>
+                </td>
+                <td colspan="2">
+                    Calpol
+                </td>
+                <td colspan="3">
+                    one Cap before Breakfast(0---)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Tab</span>
+                </td>
+                <td colspan="2">
+                    Telmed CT 40 mg
+                </td>
+                <td colspan="3">
+                    one tab at 9am  and 9pm(0---0)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <span>Tab</span>
+                </td>
+                <td colspan="2">
+                    Telmed CT 40 mg
+                </td>
+                <td colspan="3">
+                    one tab at 9am  and 9pm(0---0)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <span>Tab</span>
+                </td>
+                <td colspan="2">
+                    Telmed CT 40 mg
+                </td>
+                <td colspan="3">
+                    one tab at 9am  and 9pm(0---0)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <span>Tab</span>
+                </td>
+                <td colspan="2">
+                    Telmed CT 40 mg
+                </td>
+                <td colspan="3">
+                    one tab at 9am  and 9pm(0---0)
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <span>Tab</span>
+                </td>
+                <td colspan="2">
+                    Telmed CT 40 mg
+                </td>
+                <td colspan="3">
+                    one tab at 9am  and 9pm(0---0)
+                </td>
+
+            </tr>
+            <tr>
+                <td><b>Review:</b></td>
+                <td>1 Week</td>
+            </tr>
+        </table>
+    </div>
     <table style="padding-top:2px">
         <tr colspan="8px">
             <td style="text-align:right;padding-left:900px;">Dr:Ziadi</td>
+            <td style="text-align:right;padding-left:900px;">MBBS</td>
         </tr>
     </table>
 </div>

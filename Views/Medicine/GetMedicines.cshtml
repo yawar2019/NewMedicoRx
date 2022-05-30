@@ -5,11 +5,7 @@
 }
 
 <h2>GetMedicines</h2>
-<link href="~/Content/twitter-bootstrap.css" rel="stylesheet" />
-<link href="https://cdn.datatables.net/1.11.2/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
-<link href="~/Content/dataTables.dateTime.min.css" rel="stylesheet" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css" />
+ 
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -24,24 +20,13 @@
                 @Html.DisplayNameFor(model => model.Formula)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DisseaseId)
+                @Html.DisplayNameFor(model => model.DisseaseName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Comment)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreatedBy)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreationDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UpdatedBy)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Updationdate)
-            </th>
-            <th></th>
+             
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -55,23 +40,12 @@
                     @Html.DisplayFor(modelItem => item.Formula)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.DisseaseId)
+                    @Html.DisplayFor(modelItem => item.DisseaseName)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Comment)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CreatedBy)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CreationDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UpdatedBy)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Updationdate)
-                </td>
+                 
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.MId }) |
                     @Html.ActionLink("Details", "Details", new { id = item.MId }) |

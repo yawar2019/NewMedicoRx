@@ -125,6 +125,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AppointmentController.cs" />
     <Compile Include="Controllers\BillingController.cs" />
+    <Compile Include="Controllers\DashBoardController.cs" />
     <Compile Include="Controllers\DisseaseController.cs" />
     <Compile Include="Controllers\DoctorController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
@@ -136,19 +137,37 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AppointmentModel.cs" />
+    <Compile Include="Models\Appoint_Tab_Doses_Model.cs" />
     <Compile Include="Models\DisseasesModel.cs" />
     <Compile Include="Models\DoctorModel.cs" />
     <Compile Include="Models\InvestigationModel.cs" />
     <Compile Include="Models\MedicineModel.cs" />
+    <Compile Include="Models\PrescriptionModel.cs" />
     <Compile Include="Models\RegistrationModel.cs" />
     <Compile Include="Models\RetuningData.cs" />
+    <Compile Include="Models\TabletTypeFormModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-multiselect.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\boxicons.min.css" />
+    <Content Include="Content\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\dataTables.dateTime.min.css" />
+    <Content Include="Content\Design\fancyTable.min.js" />
+    <Content Include="Content\Forms.css" />
+    <Content Include="Content\Images\akbarLabImage.jpg" />
+    <Content Include="Content\Images\barcode.jpg" />
+    <Content Include="Content\Images\PrintIcon.png" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\Print.css" />
+    <Content Include="Content\prism.css" />
+    <Content Include="Content\Slider.css" />
+    <Content Include="Content\twitter-bootstrap.css" />
     <Content Include="Database\Medicorxscript.sql" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -196,6 +215,14 @@
     <Content Include="Views\Doctor\EditRecord.cshtml" />
     <Content Include="Views\Doctor\ReferDocIndex.cshtml" />
     <Content Include="Views\Appointment\PrescriptionForm.cshtml" />
+    <Content Include="Views\Appointment\CreatePrescriptionForm.cshtml" />
+    <Content Include="Views\Dissease\Create.cshtml" />
+    <Content Include="Views\Dissease\Delete.cshtml" />
+    <Content Include="Views\Dissease\Edit.cshtml" />
+    <Content Include="Views\Medicine\Edit.cshtml" />
+    <Content Include="Views\Medicine\Create.cshtml" />
+    <Content Include="Views\Medicine\Delete.cshtml" />
+    <Content Include="Views\DashBoard\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

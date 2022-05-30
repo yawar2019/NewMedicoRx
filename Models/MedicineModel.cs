@@ -13,6 +13,7 @@ namespace NewMedicoRx.Models
         public string MedicineName { get; set; }
         public string Formula { get; set; }
         public string DisseaseId { get; set; }
+        public string DisseaseName { get; set; }
         public string Comment { get; set; }
         public string CreatedBy { get; set; }
         public string CreationDate { get; set; }
