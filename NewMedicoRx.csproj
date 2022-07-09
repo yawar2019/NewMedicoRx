@@ -168,6 +168,7 @@
     <Content Include="Content\prism.css" />
     <Content Include="Content\Slider.css" />
     <Content Include="Content\twitter-bootstrap.css" />
+    <Content Include="Database\09072022_medicoscript.sql" />
     <Content Include="Database\30-05-2022_MedicorxScript.sql" />
     <Content Include="Database\Medicorxscript.sql" />
     <Content Include="favicon.ico" />
