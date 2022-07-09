@@ -45,7 +45,7 @@ namespace NewMedicoRx.Controllers
             return View(ap);
         }
 
-        public ActionResult CreatePrescriptionForm()
+        public ActionResult CreatePrescriptionForm(int id)
         {
             AppointmentModel ap = new AppointmentModel();
             ap.PId = 1211;
@@ -99,7 +99,7 @@ namespace NewMedicoRx.Controllers
 
 
             var param = new DynamicParameters();
-            int AppointmentId = 0;
+            int AppointmentId = 1;
             if (Request.QueryString["AppointmentId"] != null)
             {
                 AppointmentId = Convert.ToInt32(Request.QueryString["AppointmentId"]);
@@ -111,11 +111,11 @@ namespace NewMedicoRx.Controllers
 
                 param.Add("@Emergency", obj.Emergency != string.Empty ? obj.Emergency : "");
                 param.Add("@Review", obj.Review != string.Empty ? obj.Review : "");
-                param.Add("@Complain", obj.Complain != string.Empty ? obj.Complain : "");
+                param.Add("@Complain", obj.Complain.Replace(",", " ") != string.Empty ? obj.Complain.Replace(",", " ") : "");
                 param.Add("@History", obj.History != string.Empty ? obj.History : "");
-                param.Add("@Dx", obj.Dx != string.Empty ? obj.Dx : "");
+                param.Add("@Dx", obj.Dx.Replace(",", " ") != string.Empty ? obj.Dx.Replace(",", " ") : "");
                 param.Add("@Investigation", obj.Investigation != string.Empty ? obj.Investigation : "");
-                param.Add("@Advice", obj.Advice != string.Empty ? obj.Advice : "");
+                param.Add("@Advice", obj.Advice.Replace(",", " ") != string.Empty ? obj.Advice.Replace(",", " ") : ""); ;
                 param.Add("@GC", obj.GC != string.Empty ? obj.GC : "");
                 param.Add("@Temp", obj.Temp != string.Empty ? obj.Temp : "");
                 param.Add("@PR", obj.PR != string.Empty ? obj.PR : "");
